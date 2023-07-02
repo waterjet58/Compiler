@@ -1,0 +1,26 @@
+﻿CLASS Pgm4 
+{
+	VAR X;
+
+	X = 3;
+
+	IF X < 4 THEN
+	{
+		IF X <= 3 THEN
+		{
+			WHILE X > 1 DO
+			{
+				WHILE X >= 2 DO
+				{
+					IF X == 3 THEN
+					{
+						X = 0;
+					}
+				}
+			}
+		}
+	}
+
+	CALL print(X);
+
+}

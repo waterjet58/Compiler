@@ -1,0 +1,97 @@
+﻿
+PRINT proc
+push eax
+INVOKE GetStdHandle, STD_OUTPUT_HANDLE
+mov consoleOutHandle, eax
+pop eax
+INVOKE WriteConsole, consoleOutHandle, eax, ebx, offset bytesWritten, 0
+
+ret
+PRINT endp
+
+
+
+PrintLine proc
+push eax
+INVOKE GetStdHandle, STD_OUTPUT_HANDLE
+mov consoleOutHandle, eax
+pop eax
+INVOKE WriteConsole, consoleOutHandle, eax, ebx, offset bytesWritten, 0
+INVOKE WriteConsole, consoleOutHandle, offset newline, 2, offset bytesWritten, 0
+
+ret
+PrintLine endp
+
+
+
+ReadInteger proc
+
+mov eax, offset ReadIntegerMessage
+mov ebx, ReadIntegerMessageLen
+call PRINT
+
+push STD_INPUT_HANDLE
+call GetStdHandle
+mov consoleInHandle, eax
+INVOKE ReadConsole, consoleInHandle, offset buffer, 10, offset bytesRead, 0
+
+call ConvertStringToInteger  ;result in eax
+ret
+ReadInteger endp
+
+
+
+;
+; Converts an integer to a string for printing
+;
+ConvertIntegerToString proc
+
+mov ebx, offset buffer + 9
+
+ConvertLoop:
+mov edx, 0
+mov ecx, 10
+div ecx
+add dl, '0';
+mov [ebx], dl; 
+dec ebx
+cmp ebx, offset buffer
+jge ConvertLoop
+
+ret
+ConvertIntegerToString endp
+
+
+
+;
+; Converts a string read from the keyboard into an integer
+;
+ConvertStringToInteger proc
+mov eax, 0
+mov [ReadInt], eax
+mov ecx, offset buffer
+
+mov bx,0
+mov bl, BYTE PTR [ecx]
+Next:
+sub bl, '0'
+mov eax, [ReadInt]
+mov dx, 10
+mul dx
+add ax, bx
+mov [ReadInt], eax
+
+mov bx, 0
+add ecx, 1
+mov bl, BYTE PTR [ecx]
+
+cmp bl, 0Dh ;input is terminated with 0xD 0xA
+jne Next
+
+ret
+ConvertStringToInteger endp
+
+mov eax, 1
+ret
+main endp
+end

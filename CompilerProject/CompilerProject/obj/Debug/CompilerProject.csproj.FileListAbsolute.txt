@@ -1,0 +1,7 @@
+C:\Users\Zach\source\repos\CompilerProject\CompilerProject\bin\Debug\CompilerProject.exe.config
+C:\Users\Zach\source\repos\CompilerProject\CompilerProject\bin\Debug\CompilerProject.exe
+C:\Users\Zach\source\repos\CompilerProject\CompilerProject\bin\Debug\CompilerProject.pdb
+C:\Users\Zach\source\repos\CompilerProject\CompilerProject\obj\Debug\CompilerProject.csproj.AssemblyReference.cache
+C:\Users\Zach\source\repos\CompilerProject\CompilerProject\obj\Debug\CompilerProject.csproj.CoreCompileInputs.cache
+C:\Users\Zach\source\repos\CompilerProject\CompilerProject\obj\Debug\CompilerProject.exe
+C:\Users\Zach\source\repos\CompilerProject\CompilerProject\obj\Debug\CompilerProject.pdb

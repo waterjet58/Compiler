@@ -1,0 +1,16 @@
+﻿CLASS factorial
+{
+	VAR X, fac;
+
+	fac = 1;
+
+	CALL getInt(X);
+
+	WHILE X > 1 DO
+	{
+		fac = fac * X;
+		X = X - 1;
+	}
+
+	CALL print(fac);
+}

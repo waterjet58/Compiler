@@ -1,0 +1,6 @@
+﻿consoleOutHandle dd ?
+consoleInHandle DWORD ?
+bytesWritten dd ?
+bytesRead DWORD ?
+
+

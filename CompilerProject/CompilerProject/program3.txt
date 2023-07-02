@@ -1,0 +1,32 @@
+﻿CLASS Pgm3
+{
+	VAR X, Y, Z;
+
+	CALL getInt(X);
+	CALL getInt(Y);
+	CALL getInt(Z);
+
+	IF X > Y THEN
+	{	
+		IF X > Z THEN
+		{
+			CALL print(X);
+		}
+	}
+
+	IF Y > X THEN
+	{
+		IF Y > Z THEN
+		{
+			CALL print(Y);
+		}
+	}
+
+	IF Z > X THEN
+	{
+		IF Z > Y THEN
+		{
+			CALL print(Z);
+		}
+	}
+}

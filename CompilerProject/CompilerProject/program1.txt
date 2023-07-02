@@ -1,0 +1,14 @@
+﻿CLASS arithmetic
+{
+	VAR X, Y, Z, Bob, Jane, ans;
+	
+	CALL getInt(X);
+	CALL getInt(Y);
+	CALL getInt(Z);
+	CALL getInt(Bob);
+	CALL getInt(Jane);
+
+	ans = X * ( ( Bob + Jane - 10 ) / 2 * 4) / ( Y + Z );
+
+	CALL print(ans);
+}

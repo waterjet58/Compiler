@@ -1,0 +1,8 @@
+﻿
+buffer db "aaaaaaaaaa"
+newline db 10,13
+ReadIntegerMessage db "Enter a valid 64bit integer: "
+ReadIntegerMessageLen dd offset ReadIntegerMessageLen-offset ReadIntegerMessage
+;buffer BYTE 12 DUP(?),0,0
+ReadInt dd 1
+
